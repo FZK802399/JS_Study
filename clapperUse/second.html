@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="dist/clappr.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="dist/comments.js"></script>
+
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+        <div class="player" id="player-wrapper"></div>
+
+    <script type="text/javascript" charset="utf-8">
+        window.onload = function() {
+          var player = new Clappr.Player({
+            source:  'http://clappr.io/highline.mp4',
+        poster:  'http://clappr.io/poster.png',
+        mute: true,
+        height: 360,
+        width: 640,
+        plugins: {
+          core: [Comments]
+        },
+
+    
+            // Comment options
+            videoId: 1,
+            urlGetComments: "http://labs.jordane.net/clappr-comment/comments-video",
+            urlAddComments: "http://labs.jordane.net/clappr-comment/submit-comment",
+            iconComment: "fa fa-comment-o",
+            iconFont: "FontAwesome",
+            pointerColor: "blue",
+            enablePicture: true,
+            pointerColor: "blue",
+            texts: {
+              addComment: 'Add a comment at',
+              addCommentLink: "Comment",
+              minutes: "minutes",
+              commentPlaceholder: "Put a comment here",
+              sendComment: "Send"
+            }
+    
+          });
+    
+          player.attachTo(document.getElementById('player-wrapper'));
+        }
+      </script>
+      <style>
+        .player {
+          width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      </style>
+
+</body>
+</html>

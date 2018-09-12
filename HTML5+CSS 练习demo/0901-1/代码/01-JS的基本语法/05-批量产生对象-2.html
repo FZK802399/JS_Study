@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    //构造函数  不带参数
+    var Dog = function(){
+        this.name = null;
+        this.height = null;
+        this.age = null;
+        this.eat = function(meat){
+           console.log(this.name + '------吃'+ meat);
+        };
+        this.run = function(){
+            console.log(this.name + '------跑');
+        }
+    };
+
+    // 批量产生对象
+    var dog1 = new Dog();
+    dog1.name = 'wangcai';
+    dog1.height = 1.55;
+    dog1.eat('五花肉');
+    var dog2 = new Dog();
+    dog2.name = 'lulu';
+    dog2.eat('骨头');
+    dog2.height = 1.00;
+
+    console.log(dog1, dog2);
+
+    //构造函数  带参数
+
+//    var Dog = function(name, height, age){
+//    this.name = name;
+//    this.height = height;
+//    this.age = age;
+//    this.eat = function(meat){
+//        console.log(this.name + '------吃'+ meat);
+//    };
+//    this.run = function(){
+//        console.log(this.name + '------跑');
+//    }
+//    };
+//
+//    var dog1 = new Dog('wangcai', 1.44, 10);
+//    var dog2 = new Dog('ahuang', 0.11);
+//
+//    console.log(dog1, dog2);
+
+
+</script>
+</body>
+</html>

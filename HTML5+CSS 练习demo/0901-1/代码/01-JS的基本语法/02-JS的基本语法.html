@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    // 数值类型  typeof 查看真实类型
+    var nums = 10; // number
+    var money = 100.99; // number
+    var name = 'jack'; // string
+        name2 = 'rose'; // string
+    var result = true; // false  boolean
+    var num = null; //  object
+//    console.log(number, money, name, result);
+//    console.log(typeof number,typeof money,typeof name,typeof result, typeof num);
+
+    var newName = name + name2;
+//    console.log(newName);
+
+    // 运算是从左往右, 任何类型遇到string都会被转为string
+    var str1 = 10 + 10 + '10' + '10'; // 201010
+    var str2 = '10' + '10' + 10 + 10; // 101010
+    var str3 = (10 + 10) + '10' + '10';// 201010
+    var str4 = 10 + 10 + '10' + 10; // 201010
+    console.log(str2);
+
+
+
+   //数组 数组中可以放任何类型的数据
+    var numbers = [nums, 10, 'hhh', result, num, ['rrr', 10]];
+    //
+
+//      console.log(numbers[5]);
+//    for(var i=0; i< numbers.length; i++){
+//        console.log(numbers[i]);
+//    }
+
+//     console.log(typeof numbers);
+
+
+// 函数
+// 加法运算
+    function sum(num1, num2){
+//        return num1 + num2;
+        console.log(num1 + num2)
+    }
+
+    var result = sum(10, 20);
+    console.log(result);
+    sum(10, 40);
+
+//    万能的加法函数
+    function sum(numbers){
+        var count = 0;
+        for(var i=0; i<numbers.length; i++){
+            count = count + numbers[i];
+        }
+        return count;
+    }
+
+    var arr = [10, 20, 30, 40, 'jjjj'];
+    var result = sum(arr);
+    console.log(result);
+
+    // 加强版  arguments
+    function sum(){
+        var count = 0;
+        for(var i=0; i<arguments.length; i++){
+            count = count + arguments[i];
+        }
+        return count;
+    }
+
+//    var result = sum(10, 20, 30, 40);
+//    console.log(result);
+
+    // 匿名函数
+    var result = function(){
+       console.log('--------') ;
+    }
+    // 调用匿名函数 变量名();
+    result();
+</script>
+</body>
+</html>

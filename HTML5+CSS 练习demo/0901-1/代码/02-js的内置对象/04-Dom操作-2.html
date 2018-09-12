@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<img  src="img/img_01.jpg">
+
+<input value="hello world">
+
+<script>
+    var img = document.getElementsByTagName('img')[0];
+    img.onmousemove = function(){
+        console.log('在图片上移动');
+    }
+
+    img.onmouseover = function(){
+        console.log('进入图片');
+    }
+
+    img.onmouseout = function(){
+        console.log('移出图片');
+    }
+
+    var input = document.getElementsByTagName('input')[0];
+    input.onfocus = function(){
+        input.style.outline = 'none';
+        input.style.width = '300px';
+        input.style.height = '400px';
+        input.style.fontSize = '30px';
+    }
+
+    input.onselect = function(){
+        alert(input.value);
+    }
+</script>
+</body>
+</html>

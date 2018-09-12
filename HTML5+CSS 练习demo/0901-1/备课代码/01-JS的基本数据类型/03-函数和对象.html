@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+    // 函数
+//    function sum(num1, num2){
+////      return num1 + num2;
+//       console.log(num1 + num2);
+//    }
+
+//    sum(20, 30);
+
+//    var result = sum(10, 20);
+//    console.log(result)
+
+   // 万能的加法
+      function sum1(numbers){
+        var result = null;
+        for(var i = 0; i<numbers.length; i++){
+            result = result + numbers[i];
+        }
+        return result;
+      }
+
+      var arr = [10, 20, 30, 40, 50, 60];
+      var results = sum1(arr);
+//      console.log(results);
+
+//   万能加法的升级版本
+//    argument  相当于内置的数组
+     function sum2(){
+         var result = 0;
+         for(var i = 0; i<arguments.length; i++){
+             result = result + arguments[i];
+         }
+         return result;
+     }
+     console.log(sum2(21,32,32,2332, 'jack', true));
+
+  // 匿名函数
+     var sum3 = function(){
+         var result = 0;
+         for(var i = 0; i<arguments.length; i++){
+             result = result + arguments[i];
+         }
+         return result;
+     }
+
+    console.log(sum3(10, 20, 30, 40) + '-----');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

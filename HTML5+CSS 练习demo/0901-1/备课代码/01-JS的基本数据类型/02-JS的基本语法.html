@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+      var age = 18;  //number
+      var money = 100.09;//number
+      var score = -100;//number
+//  尽量不要使用双引号
+      var name = "jack";//string
+      var name2 = 'rose';//string
+      var result = true;  // false; boolean
+      var name3 = null; // 赋空值  object
+
+//     console.log(age, money, score, name, name2, result, name3);
+//     console.log(typeof age,typeof money,typeof score,typeof name,typeof name2,typeof result,typeof name3);
+
+     var newName = name +'-' + name2 + age;
+//     console.log(newName);
+
+      // 运算是从左往右, 任何类型和string类型相拼接都会变成string类型
+     var str1 = 10 + 10 + '10' + '10'; // 201010
+     var str2 = '10' + 10 + 10 + '10'; // 10101010
+     var str3 = (10 + 10) + '10' + '10';// 201010
+     var str4 = '10' + '10' + 10 + 10; // 10101010
+//     console.log(str4);
+
+     // 数组
+        var arr = [age, money, '小码哥', name, result, name3, 100, ['哈哈', 18]];
+//      数组的长度
+//        console.log(arr.length);
+//      遍历数组
+//        for(var i =0; i<arr.length; i++){
+//            console.log(arr[i]);
+//        }
+
+//       console.log(arr[7][1]);
+        console.log(typeof arr);  //object
+    </script>
+</head>
+<body>
+   <!--<button onclick="alert("你好");">百度一下</button>-->
+</body>
+</html>

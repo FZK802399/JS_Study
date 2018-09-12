@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+  <!--<input value="222222" onclick="test1();" onselect="test2();">-->
+
+
+
+  <!--<script>-->
+       <!--// 网页或者图片被加载完毕时候调用-->
+<!--//      window.onload = function(){-->
+<!--//          alert(0);-->
+<!--//      };-->
+
+       <!--var input = document.getElementsByTagName('input')[0];-->
+       <!--function test1(){-->
+          <!--// 去除外边框-->
+          <!--input.style.outline = 'none';-->
+          <!--// 改变宽度和高度-->
+          <!--input.style.width = '550px';-->
+          <!--input.style.height = '33px';-->
+          <!--// 改变外边距-->
+          <!--input.style.margin = '20px 0px 20px 0px';-->
+       <!--}-->
+
+        <!--function test2(){-->
+           <!--alert(input.value);-->
+        <!--}-->
+
+  <!--</script>-->
+
+
+<!--第二种方式-->
+    <input value="hello world!">
+
+    <script>
+        // 拿到标签
+        var input = document.getElementsByTagName('input')[0];
+        input.onclick = function(){
+            // 去除外边框
+            input.style.outline = 'none';
+            // 改变宽度和高度
+            input.style.width = '550px';
+            input.style.height = '33px';
+            // 改变外边距
+            input.style.margin = '20px 0px 20px 0px';
+        }
+
+        input.onselect = function(){
+            alert(input.value);
+        }
+    </script>
+</body>
+</html>

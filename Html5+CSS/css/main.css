@@ -1,0 +1,75 @@
+
+body{
+    background-color: #454545;
+}
+.slidBar{
+    width: 20%;
+    float: left;
+
+}
+.slidBar .header{
+
+}
+.slidBar .header .logo{
+     color: white;
+     border: 5px solid white;
+     font-size: 15px;
+     display: inline-block;
+     padding: 10px 20px;
+     margin-bottom: 10px;
+} 
+.header .introduce{
+    color: white;
+    font-size: 15px;
+    /* margin-top: 10px; */
+}
+.slidBar > *{
+    padding: 10px 15px;
+}
+a{
+    text-decoration: none;
+}
+ .slidBar .nav a ,
+ .slidBar .tagList a
+ { 
+color: #888;     
+display: block;
+padding: 5px 5px;
+font-size: 13px;
+}
+.slidBar .nav a:hover,
+.slidBar .tagList a:hover
+{
+    color:white;
+    -webkit-transition: color 200ms;
+    -o-transition: color 200ms;
+    transition: color 200ms;
+  }
+
+.main{
+   background-color: #454545;
+    width: 80%;
+    float: right;
+}
+.main .articelList {
+    background-color: white;
+    padding: 15px 15px;
+}
+.main .articelList >*
+{
+    padding: 10px;
+}
+.main .articelList .title{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.main .articelList .status {
+    font-size: 13px;
+    color: #9b9b9b;
+
+}
+.main .articelList .content{
+    color: #454545;
+}

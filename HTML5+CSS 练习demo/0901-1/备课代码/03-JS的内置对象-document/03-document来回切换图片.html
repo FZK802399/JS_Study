@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<img src="img/img_01.jpg">
+<p></p>
+<button onclick="switchImg();">切换图片</button>
+<script>
+   // 拿到图片标签
+  var img = window.document.getElementsByTagName('img')[0];
+  console.log(img.src.lastIndexOf('img_01.jpg'));
+//   lastIndexOf 如果找到则返回一个任意正数,如果没有找到,则返回-1
+//   indexOf
+  function switchImg(){
+      if(img.src.indexOf('img_01.jpg') != -1){
+          img.src = 'img/img_02.jpg';
+      }else{
+          img.src = 'img/img_01.jpg';
+      }
+  }
+
+</script>
+</body>
+</html>

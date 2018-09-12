@@ -1,0 +1,17 @@
+{
+  "name": "clapperuse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "123456"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clappr": "^0.2.91"
+  }
+}

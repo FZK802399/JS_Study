@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // document的常见用法
+        // 1.document能够动态的获取到网页中的任何一个标签(节点,元素)
+        // 2.document可以动态的对拿到的标签进行"增删改查"操作
+        // CRUD CRUD是指在做计算处理时的增加(Create)、读取(Retrieve)（重新得到数据）、更新(Update)和删除(Delete)几个单词的首字母简写
+
+//        写入
+//       document.write('hello world!');
+//       document.write('<img src="https://www.baidu.com/img/bd_logo1.png" width="200" height="100">');
+//       document.write('<input>');
+//       document.write('<input type="color">');
+//       document.write('<a href="http://www.520it.com" target="_blank">小码哥一下</a>');
+
+//        更改图片
+        var img = document.getElementById('icon');
+        console.log(img);
+    </script>
+</head>
+<body>
+   <img id="icon" name="test2" class="test1" src="img/img_01.jpg">
+   <p></p>
+   <button onclick="changeImg();">更改图片</button>
+   <!--<p class="test1"></p>-->
+   <script>
+       // 更改图片
+//  document.getElementById 根据id名找到对应的标签
+//  document.getElementsByClassName  根据类名找到对应的标签(注意:elements有多个)
+//  document.getElementsByName  根据名称找到对应的标签(注意:elements有多个)
+//  document.getElementsByTagName 根据标签名找到对应的标签 (注意:elements有多个)
+       var img = document.getElementsByTagName('img')[0];
+       console.log(img);
+
+       function changeImg(){
+           img.src = 'img/img_02.jpg';
+       }
+   </script>
+</body>
+</html>

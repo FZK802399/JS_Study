@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 对象
+//        var dog = {};
+//        console.log(typeof  dog);
+
+//       var dog = {
+//           name : 'wangcai',
+//           age  : 10,
+//           height : 1.55,
+//           friend : ['旺旺','lulu']
+//       };
+//遍历狗对象
+      for(var i in dog){
+//          console.log(dog[i]);
+      }
+
+//      dog.name
+//      dog.age
+//       console.log(dog.friend[1]);
+
+
+    // 有行为的狗对象
+//    this: 代表当前对象
+        var dog = {
+            name : 'wangcai',
+            age  : 10,
+            height : 1.55,
+            friend : ['旺旺','lulu'],
+            eat : function(meat){
+                console.log(this.name +'吃' + meat);
+            },
+            run : function(){
+                console.log(this.name + '在操场上跑步------' + this.age);
+            }
+        };
+
+//        调用狗对象的行为
+        dog.eat('五花肉');
+        dog.run();
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

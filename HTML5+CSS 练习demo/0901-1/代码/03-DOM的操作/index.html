@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<img class="icon" src="image/icon_01.png">
+<p></p>
+<button class="pre" onclick="pre();">上一张</button>
+<button class="next" onclick="next();">下一张</button>
+
+<!--<script src="js/index.js"></script>-->
+<script type="text/javascript">
+   // 拿到所有的标签
+    var icon = document.getElementsByClassName('icon')[0];
+
+     var maxImgCount = 9;
+     var minImgCount = 1;
+     var currentImg = minImgCount;
+    // 点击上一张
+    function pre(){
+       if(currentImg == minImgCount){
+           currentImg = maxImgCount;
+       }else{
+          currentImg = currentImg - 1;
+       }
+       icon.src = "image/icon_0" + currentImg + ".png"
+    }
+    // 点击下一张
+    function next(){
+       if(currentImg == maxImgCount){
+           currentImg = minImgCount;
+       }else{
+           currentImg = currentImg + 1;
+       }
+      icon.src = "image/icon_0" + currentImg + ".png"
+    }
+</script>
+</body>
+</html>

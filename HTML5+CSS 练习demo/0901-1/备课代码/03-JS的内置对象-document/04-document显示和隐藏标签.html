@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   <p id="word">12122122112211221122112</p>
+   <img src="img/img_01.jpg">
+   <p></p>
+   <button onclick="change();">隐藏</button>
+
+   <script>
+
+       // 获取到对应的标签
+       var p = document.getElementById('word');
+       var img = document.getElementsByTagName('img')[0];
+       //  获取按钮的名字
+       var button = document.getElementsByTagName('button')[0];
+
+       function change(){
+           if(button.innerHTML == '隐藏'){
+               // 隐藏对应的标签
+               p.style.display = 'none';
+               img.style.display = 'none';
+               // innerHTML是指标签内部的内容
+               button.innerHTML = '显示';
+           }else{
+               // 显示对应的标签
+               p.style.display = 'block';
+               img.style.display = 'inline-block';
+               // 改变标签内部的内容
+               button.innerHTML = '隐藏';
+           }
+
+
+       }
+   </script>
+</body>
+</html>

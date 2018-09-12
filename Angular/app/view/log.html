@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+<div class="login_page">
+<div ng-if="loginState" class="login icon container">
+    <h1>内容家登录</h1>
+    <div>
+   <a class="sm"> </a>
+    </div>
+    <div class="login_form">
+        <form action="#">
+        <div class="tr">
+            <input class="item_account" autocomplete="off" type="text" ng-model="user.name"  placeholder="邮箱/手机号码/内容家号">
+
+        </div>
+       <div class="tr">
+         <input type="password" placeholder="密码" name="pwd" ng-model="user.pwd">
+       </div>
+      <div class="tr">
+          <input type="button" value="立即登录">
+      </div>
+        </form>
+        <div class="login_link">
+            <p>其他方式登录</p>
+            <ul>
+                <li><a href=""><img src="" alt=""></a></li>
+                <li><a href=""><img src="" alt=""></a></li>
+                <li><a href=""><img src="" alt=""></a></li>
+            </ul>
+            <a href="">注册内容家账号</a>
+            <a href="">忘记密码</a>
+        </div>
+    </div>
+
+<div ng-if="!loginState" class="login2 container">
+    <h1 style="...">内容家账号扫码登录</h1>
+    <div style="...">
+    <small> "请使用内容家最新版进行扫码登录"</small>
+        <img src="../../resource/img/login2.png" height="278" width="279"  alt=""/>
+    </div>
+   <div>
+       <a class="sm2" ng-click="smOuter" href="#"></a>
+   </div>
+</div>
+    <div class="login_footer clearfix">
+        <ul>
+            <li><a href="">简体</a></li>
+            <li><a href="">繁体</a></li>
+            <li><a href="">English</a></li>
+            <li><a href="">常见问题</a></li>
+
+        </ul>
+        <p class="icp">爱数公司版权所有-海ICP备10046444-海公网安备11010802020134号-海ICP证110507号</p>
+    </div>
+</div>
+</div>
+</body>
+</html>

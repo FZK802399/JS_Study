@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>倒计时</title>
+    <style>
+        .icon_title{
+            margin: 50px;
+            display: none;
+            font-size: 200px;
+        }
+        .time{
+            margin: 50px;
+            font-size: 200px;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="time">5</div>
+    <p class="icon_title">只怪我没有文化,只能从上赞到下</p>
+    <script>
+    var icon_title = document.getElementsByName("icon_title")[0];
+    var time_div       =document.getElementsByClassName('time')[0];
+
+
+    var timer = setInterval(function(){
+    time_div.innerHTML = time_div.innerHTML - 1; 
+   if(time_div.innerHTML == '0'){
+     clearInterval(timer);
+     time_div.style.display = 'none';
+     icon_title.style.display = 'inline-block';
+      }
+    },1000);
+    </script>
+</body>
+</html>

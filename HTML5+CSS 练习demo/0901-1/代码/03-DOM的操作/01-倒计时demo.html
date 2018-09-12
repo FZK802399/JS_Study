@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{
+            margin: 50px;
+            display: none;
+        }
+
+        .time{
+            margin: 50px;
+            font-size: 200px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<img name="icon" src="image/img_03.jpg">
+<div class="time">5</div>
+
+<script type="text/javascript">
+    // 拿到对应的标签
+    var img = document.getElementsByName('icon')[0];
+    var div = document.getElementsByClassName('time')[0];
+
+   //  计时器
+   var timer = setInterval(function(){
+         div.innerHTML = div.innerHTML -1;
+         // 判断
+         if(div.innerHTML == '0'){
+            // 清除计时器
+             clearInterval(timer);
+            // 隐藏div
+             div.style.display = 'none';
+            // 显示图片
+             img.style.display = 'inline-block';
+         }
+     }, 1000);
+
+
+</script>
+</body>
+</html>

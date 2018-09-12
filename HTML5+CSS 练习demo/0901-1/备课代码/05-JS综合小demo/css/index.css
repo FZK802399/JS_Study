@@ -1,0 +1,70 @@
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{
+  padding: 0px;
+  margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+.tab{
+    width: 498px;
+    height: 130px;
+    margin: 30px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.tab .tab-head{
+    height: 36px;
+    position: relative;
+    background-color: #F7F7F7;
+}
+
+.tab .tab-head ul{
+    position: absolute;
+    width: 501px;
+    left: -1px;
+}
+
+.tab .tab-head li{
+    float: left;
+    width: 98px;
+    height: 36px;
+    background-color: #F7F7F7;
+    line-height: 36px;
+    border-bottom: 1px solid #ddd;
+    padding: 0 1px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.tab .tab-head li a:hover{
+    color: #F90;
+}
+
+.tab .tab-head li.select{
+    background-color: #FFF;
+    border-bottom-color:#FFF;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    padding: 0px;
+    font-weight: bolder;
+}
+
+.tab .mod{
+    margin: 10px 6px;
+    display: none;
+}
+
+.tab .mod ul li{
+    float: left;
+    width: 239px;
+    height: 35px;
+    overflow: hidden;
+}

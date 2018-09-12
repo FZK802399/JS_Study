@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // document
+        // 1.动态的获取网页中所有的节点
+        // 2.可以动态的对节点进行CRUD
+        // 3.CRUD是指在做计算处理时的增加(Create)、读取(Retrieve)（重新得到数据）、更新(Update)和删除(Delete)
+
+//        document.write('hello world');
+//        document.write('<button>百度一下</button>');
+//        document.write('<img src="https://www.baidu.com/img/bd_logo1.png" width="200">');
+
+//      getElementById  id名
+//      getElementsByClassName  className
+//     getElementsByName  根据标签的内部属性name
+//     getElementsByTagName
+
+      //   function change(){
+      //    var img = document.getElementsByTagName('img')[0];
+      //    img.src = 'img/img_02.jpg';
+      // }
+      function change(){
+        var img = document.getElementsByTagName('img')[0];
+        img.src = 'img/img-02.jpg';
+      }
+
+        
+    </script>
+</head>
+<body>
+  <img name="test2" id="icon" class="test1" src="img/img_01.jpg">
+  <p></p>
+  <button onclick="change();">改变图片</button>
+  <div class="test1"></div>
+</body>
+</html>

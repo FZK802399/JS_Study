@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // ||  &&
+        var name1 = 'name1';
+        var name2 = '';
+        var name3 = 'name3';
+        var name4 = 'name4';
+
+        var newName = null;
+        // 传统的做法
+        if(name1){
+            newName = name1;
+        }else if(name2){
+            newName = name2;
+        }else if(name3){
+            newName = name3;
+        }else{
+            newName = name4;
+        }
+//        console.log(newName);
+
+//        灵活的写法
+        newName = name1 || name2 || name3 || name4;
+//        console.log(newName);
+
+//    &&
+        var age = 21;
+//        if(age > 20){
+//            console.log('可以结婚了!');
+//        }
+
+        (age > 20) && console.log('可以结婚了!');
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

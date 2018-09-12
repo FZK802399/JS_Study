@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        img{
+            display: none;
+        }
+
+        div{
+           font-size: 200px;
+           color: red;
+        }
+    </style>
+</head>
+<body>
+  <img class="icon" src="img/thy.jpg">
+  <div class="time">5</div>
+
+  <script>
+
+   var timer = setInterval(function(){
+        var div = document.getElementsByClassName('time')[0];
+        div.innerHTML = div.innerHTML - 1;
+        if(div.innerHTML == '0'){
+            // 清除计时器
+              clearInterval(timer);
+            // 隐藏div
+               div.style.display = 'none';
+            // 显示图片
+               var img = document.getElementsByClassName('icon')[0];
+               img.style.display = 'inline-block';
+
+        }
+     }, 1000);
+
+  </script>
+</body>
+</html>

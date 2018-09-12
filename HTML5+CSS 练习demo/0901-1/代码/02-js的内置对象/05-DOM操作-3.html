@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<img id="icon" src="img/img_01.jpg">
+<p id="word">12311121221212112</p>
+<p></p>
+<button id="btn">隐藏</button>
+
+<script>
+    var img = document.getElementById('icon');
+    var p = document.getElementById('word');
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function(){
+        if(btn.innerHTML == '隐藏'){
+            btn.innerHTML = '显示';
+            img.style.display = 'none';
+            p.style.display = 'none';
+        }else{
+            btn.innerHTML = '隐藏';
+            img.style.display = 'inline-block';
+            p.style.display = 'block';
+        }
+    }
+</script>
+</body>
+</html>

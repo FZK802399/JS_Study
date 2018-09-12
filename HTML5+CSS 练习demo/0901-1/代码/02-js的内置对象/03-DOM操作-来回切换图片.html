@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<img src="img/img_01.jpg">
+<p></p>
+<button name="btns">切换图片</button>
+
+<script>
+    var img = document.getElementsByTagName('img')[0];
+    var btn = document.getElementsByName('btns')[0];
+    btn.onclick = function(){
+//       console.log(img.src);
+
+        // lastIndexOf  如果有, 任一正数, 没有, -1
+        // indexOf
+       if(img.src.lastIndexOf('img_01.jpg') != -1){
+           img.src = 'img/img_02.jpg';
+       }else{
+           img.src = 'img/img_01.jpg';
+       }
+    }
+</script>
+</body>
+</html>

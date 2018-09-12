@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="dist/clappr.js"></script>
+    <script type="text/javascript" src="dist/clappr-markers-plugin.js"></script>
+    <script type="text/javascript" src="dist/clappr-nerd-stats.js"></script>
+    <script type="text/javascript" src="dist/clappr-thumbnails-plugin.js"></script>
+    <script type="text/javascript" src="dist/clappr-pip-plugin.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clappr-stats/dist/clappr-stats.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+
+</head>
+<body>
+  <div class="container">
+        <div id="player" style="height: 360px; width: 640px;">
+
+             <div class="problem problemHiden" id = "divHiden">
+                 <div class="chocie">
+                        <div class="h1">当方法遇到异常又不知如何处理时，下列（） 做法是正确的</div>
+                        <input type="radio" name="radio_1" value="A">A、捕获异常<br>
+                        <input type="radio" name="radio_1" value="B">B、抛出异常<br>
+                        <input type="radio" name="radio_1" value="C">C、声明异常<br>
+                        <input type="radio" name="radio_1" value="D">D、嵌套异常<br>   
+                 </div>
+                 <div class="chocie">
+                        <div class="h1">当方法遇到异常又不知如何处理时，下列（） 做法是正确的</div>
+                        <input type="radio" name="radio_2" value="A">A、捕获异常<br>
+                        <input type="radio" name="radio_2" value="B">B、抛出异常<br>
+                        <input type="radio" name="radio_2" value="C">C、声明异常<br>
+                        <input type="radio" name="radio_2" value="D">D、嵌套异常<br>   
+                 </div>
+                 <div class="tabar">
+                        <button onclick="my_confirm()" class="Button_show">完成</button>
+                 </div>
+    
+              </div>
+        </div>
+  </div>
+
+<script type="text/javascript">
+var index_curennt = 2;
+//定义一个全局的对象()
+var video_Cureent;
+//判断你做的题是否完全做完
+var isempty_input;
+/// 自己造的假数据
+var data = [{"time":10 , "question":"问题1"},{"time":15 , "question":"问题2"},{"time":30 , "question":"问题???"}];
+
+//封装一个对象
+function video_q(time,question,isRead){
+  this.time = time;
+  this.question = question;
+  this.isRead   = isRead;
+}
+
+//定义一个存放video_q对象的数组
+var video_arr = [];
+ for (let index = 0; index < data.length; index++) {
+   var q = data[index];
+   var video_ =  new video_q(q.time , q.question ,false);
+   video_arr.push(video_);
+ }
+//放图片
+var thumbs = [];
+for (let index = 0; index < data.length; index++) {
+    var q = data[index];
+    thumbs.push({
+        url: "http://tjenkinson.me/clappr-thumbnails-plugin/assets/thumbnails/thumb_"+(index*10+5)+".jpg",
+        time: q.time
+      });
+}
+
+//判断所有radio的标签有没有被选中的
+function getJson(){
+   for (let index = 1; index <= index_curennt; index++) {
+    var radio_name = new String("radio_" + index);
+    var value_input = $('input:radio[name=' + radio_name + ']:checked').val();
+    if(value_input == '' || value_input == undefined){
+        isempty_input = true;
+        break;
+    }else{
+        isempty_input = false;
+    }
+}
+}
+//拿到改Div隐藏和出来
+var divShowOrHiden = document.getElementById("divHiden");
+ var  div_chocie    = $(".chocie")[0];
+ function my_confirm() {
+    this.getJson();
+    if(isempty_input){
+        alert("你有选择题没有做");
+    }else{
+    // $(".problem").empty(".chocie");
+    index_curennt++;
+    var text1 =  "<input type='radio'" + "name=radio_"+index_curennt+" value='A'>A、捕获异常<br>";
+    $(".tabar").before("<div class='h1'>当方法遇到异常又不知如何处理时，下列（） 做法是正确的</div>",
+                        text1,
+                        text1,
+                        text1,
+                        text1,
+                        );
+    
+    divShowOrHiden.style.display = 'none';
+    var seekTime = (0, video_Cureent.time+1);
+    window.player.core.mediaControl.container.seek(seekTime)
+    window.player.core.mediaControl.container.play();   
+    }
+ }
+
+window.onload = function() 
+{
+    var markerInfo =[
+     ];
+for (let index = 0; index < video_arr.length; index++) {
+   var arr = [];
+   var q   = video_arr[index];
+   arr.push(q.time );
+   arr.push(q.question);
+   markerInfo.push(arr);
+    
+}
+
+    var markers = [];
+    for(var i=0; i<markerInfo.length; i++) {
+      var info = markerInfo[i];
+      markers.push(new ClapprMarkersPlugin.StandardMarker(info[0], info[1]));
+  
+    }
+      var playerElement = document.getElementById("player");
+      window.player = new Clappr.Player({
+      source:'http://www-yunfabu-media.oss-cn-hangzhou.aliyuncs.com/1382FF1D-AB0E-449C-834C-9539A808E64C-M3U8_848.m3u8',
+        poster:  'http://clappr.io/poster.png',
+        mute: true,
+        height: 360,
+        width: 640,
+    plugins: {
+        core: [ClapprMarkersPlugin,ClapprThumbnailsPlugin,ClapprPIPPlugin],
+        },
+    //  plugins: [ClapprPIPPlugin],
+
+    markersPlugin: {
+        markers: markers
+      },
+
+    scrubThumbnails: {
+        backdropHeight: 64, // set to 0 or null to disable backdrop
+        spotlightHeight: 84, // set to 0 or null to disable spotlight
+        backdropMinOpacity: 0.4, // optional
+        backdropMaxOpacity: 1, // optional
+        thumbs: thumbs
+      } ,
+    // plugins: [ClapprNerdStats,ClapprStats, LevelSelector],
+    // clapprNerdStats: {
+    //         shortcut: ['command+shift+s', 'ctrl+shift+s'],
+    //         iconPosition: 'top-right'
+    //       },
+
+    events: {
+    onReady: function() { }, //Fired when the player is ready on startup
+    onResize: function() {  },//Fired when player resizes
+    onPlay: function() {  },//Fired when player starts to play
+    onPause: function() { },//Fired when player pauses
+    onStop: function() {  },//Fired when player stops
+    onEnded: function() { },//Fired when player ends the video
+    onSeek: function() {  },//Fired when player seeks the video
+    onError: function() {  },//Fired when player receives an error
+    onTimeUpdate: function() 
+     { 
+
+        var currentTimefloat = this.core.mediaControl.container.getCurrentTime();
+        var currentTimeInt   = parseInt(currentTimefloat);
+        for (let index = 0; index < video_arr.length; index++) {
+           var q = video_arr[index];
+           if (currentTimeInt == q.time && q.isRead == false) {
+            divShowOrHiden.style.display = "block";     
+            this.core.mediaControl.container.pause();
+            q.isRead = true;
+            video_Cureent = q;
+        }            
+    }
+     },//Fired when the time is updated on player
+    onVolumeUpdate: function() 
+    { 
+    },//Fired when player updates its volume
+}    
+
+      });
+      
+ player.attachTo(playerElement);
+
+    
+    // setTimeout(function() {
+    //     alert('sadasda');
+    // //   markersPlugin.clearMarkers();
+
+    // }, 500);
+ 
+    // console.log(markersPlugin.getByIndex(1));          
+
+}
+ </script>
+  </body>
+
+
+
+</html>

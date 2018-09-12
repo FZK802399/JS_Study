@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <img name="icon" src="img/img_01.jpg">
+
+    <script>
+       var img = document.getElementsByName('icon')[0];
+       // 移进图片
+        img.onmouseover = function(){
+            console.log('鼠标进入图片区域');
+        }
+       // 在图片中移动
+        img.onmousemove = function(){
+            console.log('鼠标在图片上移动');
+        }
+      // 离开图片
+        img.onmouseout = function(){
+            console.log('鼠标已出图片')
+        }
+
+    </script>
+</body>
+</html>
